@@ -15,7 +15,7 @@ import csc.ai.algorithms.search.ISearch;
 public class Dfs implements ISearch {
 
     @Override
-    public <T> boolean find(T stop, Graph graph, T start) {
+    public boolean find(String stop, Graph graph, String start) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

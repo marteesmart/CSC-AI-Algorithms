@@ -5,10 +5,21 @@
  */
 package csc.ai.algorithms.search;
 
+import csc.ai.algorithms.datastructures.Graph;
+
 /**
  *
  * @author mayowa
  */
 public interface ISearch {
-    
+
+    /**
+     *
+     * @param <T>
+     * @param stop
+     * @param graph
+     * @param start
+     * @return
+     */
+    public boolean find(String stop, Graph graph, String start);
 }

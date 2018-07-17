@@ -5,6 +5,7 @@
  */
 package csc.ai.algorithms.search.uninformed;
 
+import csc.ai.algorithms.datastructures.Graph;
 import csc.ai.algorithms.search.ISearch;
 
 /**
@@ -12,5 +13,10 @@ import csc.ai.algorithms.search.ISearch;
  * @author mayowa
  */
 public class Dfs implements ISearch {
+
+    @Override
+    public <T> boolean find(T stop, Graph graph, T start) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

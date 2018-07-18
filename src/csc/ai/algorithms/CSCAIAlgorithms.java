@@ -19,6 +19,8 @@ public class CSCAIAlgorithms {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        testBFS();
     }
     
    
@@ -46,7 +48,7 @@ public class CSCAIAlgorithms {
         
         Bfs bfs = new Bfs();
         String start = "A";
-        String stop = "F";
+        String stop = "I";
         System.out.println(bfs.find(stop, graph, start));
     }
 }

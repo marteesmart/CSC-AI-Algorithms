@@ -19,4 +19,8 @@ public class Edge {
         this.to = to;
     }
     
+    public Vertex getTo(){
+        return to;
+    }
+    
 }

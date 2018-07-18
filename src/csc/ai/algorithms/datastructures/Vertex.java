@@ -17,6 +17,11 @@ public class Vertex {
     private ArrayList<Edge> edges = new ArrayList();
     private boolean complete = false;
     private boolean seen = false;
+    private String identifier;
+    
+    public Vertex(String id){
+        identifier = id;
+    }
     
     public void addEdge(Vertex to){
         edges.add(new Edge(this, to));
@@ -42,6 +47,12 @@ public class Vertex {
         return true;
     }
     
-
+    public ArrayList<Edge> getEdges(){
+        return edges;
+    }
+    
+    public String getIdentidier(){
+        return identifier;
+    };
     
 }

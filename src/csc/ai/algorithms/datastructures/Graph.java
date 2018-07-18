@@ -22,7 +22,7 @@ public class Graph {
     }
     
     public void addVertex(String identifier){
-        vertices.put(identifier, new Vertex());
+        vertices.put(identifier, new Vertex(identifier));
     }
     
     public Vertex getVertex(String identifier){

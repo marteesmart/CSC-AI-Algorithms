@@ -15,11 +15,10 @@ public interface ISearch {
 
     /**
      *
-     * @param <T>
-     * @param stop
-     * @param graph
-     * @param start
-     * @return
+     * @param stop the identifier of the vertex we are searching for
+     * @param graph the graph to be searched
+     * @param start the identifier of the vertex to start the search from
+     * @return a boolean that indicates whether the search was successful or not
      */
     public boolean find(String stop, Graph graph, String start);
 }

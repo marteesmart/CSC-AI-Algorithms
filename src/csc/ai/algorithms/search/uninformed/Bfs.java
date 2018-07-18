@@ -5,10 +5,12 @@
  */
 package csc.ai.algorithms.search.uninformed;
 
+import csc.ai.algorithms.datastructures.Edge;
 import csc.ai.algorithms.datastructures.Graph;
 import csc.ai.algorithms.datastructures.Vertex;
 import csc.ai.algorithms.search.ISearch;
-import java.util.Stack;
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  *
@@ -18,15 +20,25 @@ public class Bfs implements ISearch {
 
     @Override
     public boolean find(String stop, Graph graph, String start) {
-        boolean success = false;
-        Stack<Vertex> stack = new Stack();
+        Queue<Vertex> queue;
+        queue = new LinkedList();
         Vertex current;
-        current = graph.getVertex(start);
-        while(current != null){
-            
+        queue.add(graph.getVertex(start));
+        while(!queue.isEmpty()){
+            current = queue.remove();
+            System.out.println(current.getIdentidier());
+            for(Edge edge : current.getEdges()){
+                if(!edge.getTo().isSeen()){
+                    if(edge.getTo().equals(graph.getVertex(stop))){
+                        return true;
+                    }
+                edge.getTo().seen();
+                queue.add(edge.getTo());
+                }
+            }
         }
         
-        return success;
+        return false;
     }
     
     

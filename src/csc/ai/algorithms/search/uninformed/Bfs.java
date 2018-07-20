@@ -16,6 +16,7 @@ import java.util.Queue;
  *
  * @author mayowa
  */
+//Breadth First Search
 public class Bfs implements ISearch {
 
     @Override

@@ -18,9 +18,15 @@ public class Vertex {
     private boolean complete = false;
     private boolean seen = false;
     private String identifier;
-    
+    int level;
+     
     public Vertex(String id){
         identifier = id;
+    }
+    
+    public Vertex(String id, int level){
+        identifier = id;
+        this.level = level;
     }
     
     public void addEdge(Vertex to){
@@ -54,5 +60,9 @@ public class Vertex {
     public String getIdentidier(){
         return identifier;
     };
+    
+    public int getLevel(){
+        return this.level;
+    }
     
 }

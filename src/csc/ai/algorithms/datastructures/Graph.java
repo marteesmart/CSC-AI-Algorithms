@@ -25,6 +25,10 @@ public class Graph {
         vertices.put(identifier, new Vertex(identifier));
     }
     
+    public void addVertex(String identifier, int level){
+        vertices.put(identifier, new Vertex(identifier, level));
+    }
+    
     public Vertex getVertex(String identifier){
         if(vertices.containsKey(identifier)){
             return vertices.get(identifier);

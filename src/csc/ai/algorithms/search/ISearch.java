@@ -21,4 +21,6 @@ public interface ISearch {
      * @return a boolean that indicates whether the search was successful or not
      */
     public boolean find(String stop, Graph graph, String start);
+    
+    //boolean isGoal(Vertex current);
 }

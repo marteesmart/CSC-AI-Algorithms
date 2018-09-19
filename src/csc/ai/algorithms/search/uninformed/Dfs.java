@@ -7,7 +7,6 @@ package csc.ai.algorithms.search.uninformed;
 
 import csc.ai.algorithms.datastructures.Graph;
 import csc.ai.algorithms.datastructures.Vertex;
-import csc.ai.algorithms.search.ISearch;
 import java.util.Stack;
 
 /**
@@ -15,9 +14,8 @@ import java.util.Stack;
  * @author mayowa
  */
 //Depth First Search
-public class Dfs implements ISearch {
+public class Dfs{
 
-    @Override
     public boolean find(String stop, Graph graph, String start) {
         boolean success = false;
         Stack<Vertex> stack = new Stack();

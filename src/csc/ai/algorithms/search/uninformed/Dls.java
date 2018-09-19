@@ -7,7 +7,6 @@ package csc.ai.algorithms.search.uninformed;
 
 import csc.ai.algorithms.datastructures.Graph;
 import csc.ai.algorithms.datastructures.Vertex;
-import csc.ai.algorithms.search.ISearch;
 import java.util.Stack;
 
 /**
@@ -15,29 +14,30 @@ import java.util.Stack;
  * @author mayowa
  */
 //Depth Limited Search
-public class Dls implements ISearch {
+public class Dls {
     
-    int limit = 1;
     
     //Same as DFS but with limit condition
-    @Override
-    public boolean find(String stop, Graph graph, String start) {
+    public boolean find(String stop, Graph graph, String start, int limit) {
         boolean success = false;
         Stack<Vertex> stack = new Stack();
         Vertex current;
         stack.push(graph.getVertex(start));
+        int depth = 0;
+        stack.peek().setDepth(0);
         while(!stack.empty()){
             current = stack.peek();
             System.out.println(current.getIdentidier());
             current.seen();
             
-            if(current.getLevel() < limit){
+            if(current.getDepth() < limit){
                 for(int i = 0; i < current.getEdges().size(); i++){
                     if(!current.getEdges().get(i).getTo().isSeen()){
+                        current.getEdges().get(i).getTo().seen();
+                        current.getEdges().get(i).getTo().setDepth(current.getDepth() + 1);
                         if(current.getEdges().get(i).getTo().equals(graph.getVertex(stop))){
                             return true;
                         }else{
-                            current.getEdges().get(i).getTo().seen();
                             stack.push(current.getEdges().get(i).getTo());
                             break;
                         }

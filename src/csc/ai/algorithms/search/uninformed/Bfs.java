@@ -8,7 +8,6 @@ package csc.ai.algorithms.search.uninformed;
 import csc.ai.algorithms.datastructures.Edge;
 import csc.ai.algorithms.datastructures.Graph;
 import csc.ai.algorithms.datastructures.Vertex;
-import csc.ai.algorithms.search.ISearch;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -17,9 +16,8 @@ import java.util.Queue;
  * @author mayowa
  */
 //Breadth First Search
-public class Bfs implements ISearch {
+public class Bfs {
 
-    @Override
     public boolean find(String stop, Graph graph, String start) {
         Queue<Vertex> queue;
         queue = new LinkedList();

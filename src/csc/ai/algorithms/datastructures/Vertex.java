@@ -18,7 +18,7 @@ public class Vertex {
     private boolean complete = false;
     private boolean seen = false;
     private String identifier;
-    int level;
+    private int level;
      
     public Vertex(String id){
         identifier = id;
@@ -61,8 +61,12 @@ public class Vertex {
         return identifier;
     };
     
-    public int getLevel(){
+    public int getDepth(){
         return this.level;
+    }
+    
+    public void setDepth(int d){
+        level = d;
     }
     
 }

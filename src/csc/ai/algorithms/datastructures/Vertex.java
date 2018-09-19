@@ -45,6 +45,10 @@ public class Vertex {
         seen = true;
     }
     
+    public void unsee(){
+        seen = false;
+    }
+    
     public boolean complete(){
         if(seen == false){
             return false;

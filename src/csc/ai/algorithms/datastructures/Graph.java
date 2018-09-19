@@ -35,4 +35,8 @@ public class Graph {
         }
         return null;
     }
+    
+    public HashMap<String, Vertex> getVertices(){
+        return this.vertices;
+    }
 }

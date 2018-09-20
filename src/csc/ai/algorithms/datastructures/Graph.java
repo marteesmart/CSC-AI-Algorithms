@@ -21,6 +21,13 @@ public class Graph {
         }
     }
     
+    public void connect(String from, String to, int weight){
+        if(vertices.containsKey(from) && vertices.containsKey(to)){
+            vertices.get(from).addEdge(vertices.get(to));
+            vertices.get(from).getEdges().get(to).setWeight(weight);
+        }
+    }
+    
     public void addVertex(String identifier){
         vertices.put(identifier, new Vertex(identifier));
     }

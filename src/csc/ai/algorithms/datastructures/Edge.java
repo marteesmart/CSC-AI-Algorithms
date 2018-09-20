@@ -13,10 +13,19 @@ public class Edge {
     
     final private Vertex from;
     final private Vertex to;
+    private int weight;
     
     public Edge(Vertex from, Vertex to){
         this.from = from;
         this.to = to;
+    }
+    
+    public void setWeight(int w){
+        weight = w;
+    }
+    
+    public int getWeight(){
+        return weight;
     }
     
     public Vertex getTo(){

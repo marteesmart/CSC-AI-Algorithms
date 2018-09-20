@@ -26,7 +26,7 @@ public class Bfs {
         while(!queue.isEmpty()){
             current = queue.remove();
             System.out.println(current.getIdentidier());
-            for(Edge edge : current.getEdges()){
+            for(Edge edge : current.getEdges().values()){
                 if(!edge.getTo().isSeen()){
                     if(edge.getTo().equals(graph.getVertex(stop))){
                         return true;

@@ -5,6 +5,7 @@
  */
 package csc.ai.algorithms.search.uninformed;
 
+import csc.ai.algorithms.datastructures.Edge;
 import csc.ai.algorithms.datastructures.Graph;
 import csc.ai.algorithms.datastructures.Vertex;
 import java.util.Stack;
@@ -31,14 +32,16 @@ public class Dls {
             current.seen();
             
             if(current.getDepth() < limit){
-                for(int i = 0; i < current.getEdges().size(); i++){
-                    if(!current.getEdges().get(i).getTo().isSeen()){
-                        current.getEdges().get(i).getTo().seen();
-                        current.getEdges().get(i).getTo().setDepth(current.getDepth() + 1);
-                        if(current.getEdges().get(i).getTo().equals(graph.getVertex(stop))){
+                int i = -1;
+                for(Edge edge : current.getEdges().values()){
+                    i++;
+                    if(!edge.getTo().isSeen()){
+                        edge.getTo().seen();
+                        edge.getTo().setDepth(current.getDepth() + 1);
+                        if(edge.getTo().equals(graph.getVertex(stop))){
                             return true;
                         }else{
-                            stack.push(current.getEdges().get(i).getTo());
+                            stack.push(edge.getTo());
                             break;
                         }
                     }else{

@@ -2,6 +2,13 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/mayowa/Documents/NetBeansProjects/CSC%20AI%20Algorithms/src/csc/ai/algorithms/search/uninformed/Dfs.java</file>
+            <file>file:/C:/Users/mayowa/Documents/NetBeansProjects/CSC%20AI%20Algorithms/src/csc/ai/algorithms/search/uninformed/Bfs.java</file>
+            <file>file:/C:/Users/mayowa/Documents/NetBeansProjects/CSC%20AI%20Algorithms/src/csc/ai/algorithms/datastructures/Vertex.java</file>
+            <file>file:/C:/Users/mayowa/Documents/NetBeansProjects/CSC%20AI%20Algorithms/src/csc/ai/algorithms/search/uninformed/Dls.java</file>
+            <file>file:/C:/Users/mayowa/Documents/NetBeansProjects/CSC%20AI%20Algorithms/src/csc/ai/algorithms/datastructures/Graph.java</file>
+            <file>file:/C:/Users/mayowa/Documents/NetBeansProjects/CSC%20AI%20Algorithms/src/csc/ai/algorithms/CSCAIAlgorithms.java</file>
+        </group>
     </open-files>
 </project-private>

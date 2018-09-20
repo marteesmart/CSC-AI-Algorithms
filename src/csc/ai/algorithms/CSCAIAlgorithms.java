@@ -23,7 +23,7 @@ public class CSCAIAlgorithms {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        testIDS();
+        testUCS();
     }
     
    
@@ -161,4 +161,33 @@ public class CSCAIAlgorithms {
         
         
     }
+    
+    public static void testUCS(){
+        Graph graph = new Graph();
+        graph.addVertex("A");
+        graph.addVertex("B");
+        graph.addVertex("C");
+        graph.addVertex("D");
+        graph.addVertex("E");
+        graph.addVertex("F");
+        graph.addVertex("G");
+        graph.addVertex("H");
+        graph.addVertex("I");
+        graph.addVertex("J");
+        
+        graph.connect("A", "B");
+        graph.connect("A", "C");
+        graph.connect("B", "D");
+        graph.connect("B", "E");
+        graph.connect("B", "F");
+        graph.connect("D", "I");
+        graph.connect("C", "G");
+        graph.connect("G", "H");
+        
+        Dls dls = new Dls();
+        String start = "A";
+        String stop = "H";
+        System.out.println(dls.find(stop, graph, start, 2));
+    }
+    
 }

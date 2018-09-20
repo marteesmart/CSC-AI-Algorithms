@@ -5,7 +5,7 @@
  */
 package csc.ai.algorithms.datastructures;
 
-import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  *
@@ -14,7 +14,8 @@ import java.util.ArrayList;
 public class Vertex {
     
 
-    private ArrayList<Edge> edges = new ArrayList();
+    //private ArrayList<Edge> edges = new ArrayList();
+    private HashMap<String, Edge> edges = new HashMap();
     private boolean complete = false;
     private boolean seen = false;
     private String identifier;
@@ -30,7 +31,7 @@ public class Vertex {
     }
     
     public void addEdge(Vertex to){
-        edges.add(new Edge(this, to));
+        edges.put(to.getIdentidier(), new Edge(this, to));
     }
     
     public boolean isComplete(){
@@ -57,7 +58,7 @@ public class Vertex {
         return true;
     }
     
-    public ArrayList<Edge> getEdges(){
+    public HashMap<String, Edge> getEdges(){
         return edges;
     }
     

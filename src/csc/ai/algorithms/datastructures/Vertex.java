@@ -19,15 +19,17 @@ public class Vertex {
     private boolean complete = false;
     private boolean seen = false;
     private String identifier;
-    private int level;
+    private int depth;
+    private int path_to_root = 100000000;
+    Vertex parent;
      
     public Vertex(String id){
         identifier = id;
     }
     
-    public Vertex(String id, int level){
+    public Vertex(String id, int depth){
         identifier = id;
-        this.level = level;
+        this.depth = depth;
     }
     
     public void addEdge(Vertex to){
@@ -67,11 +69,27 @@ public class Vertex {
     };
     
     public int getDepth(){
-        return this.level;
+        return this.depth;
     }
     
     public void setDepth(int d){
-        level = d;
+        depth = d;
+    }
+    
+    public int getPathToRoot(){
+        return path_to_root;
+    }
+    
+    public void setPathToRoot(int p){
+        path_to_root = p;
+    }
+    
+    public void setParent(Vertex v){
+        parent = v;
+    }
+    
+    public Vertex getParent(){
+        return parent;
     }
     
 }

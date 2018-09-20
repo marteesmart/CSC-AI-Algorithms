@@ -10,6 +10,7 @@ import csc.ai.algorithms.datastructures.Vertex;
 import csc.ai.algorithms.search.uninformed.Bfs;
 import csc.ai.algorithms.search.uninformed.Dfs;
 import csc.ai.algorithms.search.uninformed.Dls;
+import csc.ai.algorithms.search.uninformed.Ucs;
 
 /**
  *
@@ -175,19 +176,22 @@ public class CSCAIAlgorithms {
         graph.addVertex("I");
         graph.addVertex("J");
         
-        graph.connect("A", "B");
-        graph.connect("A", "C");
-        graph.connect("B", "D");
-        graph.connect("B", "E");
-        graph.connect("B", "F");
-        graph.connect("D", "I");
-        graph.connect("C", "G");
-        graph.connect("G", "H");
+        graph.connect("A", "B", 2);
+        graph.connect("A", "C", 3);
+        graph.connect("B", "D", 1);
+        graph.connect("B", "E", 5);
+        graph.connect("B", "F", 7);
+        graph.connect("D", "I", 6);
+        graph.connect("C", "G", 10);
+        graph.connect("G", "H", 4);
+        graph.connect("I", "H", 2);
+        graph.connect("E", "H", 1);
+        graph.connect("F", "H", 1);
         
-        Dls dls = new Dls();
+        Ucs ucs = new Ucs();
         String start = "A";
         String stop = "H";
-        System.out.println(dls.find(stop, graph, start, 2));
+        System.out.println(ucs.find(stop, graph, start));
     }
     
 }

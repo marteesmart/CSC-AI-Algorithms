@@ -28,6 +28,7 @@ public class Ucs {
         
         while(!queue.isEmpty()){
             current = queue.remove();
+            current.seen();
             System.out.println(current.getIdentidier());
             if(current.equals(graph.getVertex(stop))){
                 boolean terminate = false;
@@ -45,13 +46,14 @@ public class Ucs {
                 return true;
             }
             for(Edge edge : current.getEdges().values()){
-                if((current.getPathToRoot() + edge.getWeight()) < edge.getTo().getPathToRoot()){
-                    edge.getTo().setPathToRoot(current.getPathToRoot() + edge.getWeight());
-                    edge.getTo().setParent(current);
+                if(!edge.getTo().isSeen()){
+                    if((current.getPathToRoot() + edge.getWeight()) < edge.getTo().getPathToRoot()){
+                        edge.getTo().setPathToRoot(current.getPathToRoot() + edge.getWeight());
+                        edge.getTo().setParent(current);
+                    }
+                queue.add(edge.getTo());
                 }
                 
-                
-                queue.add(edge.getTo());
             }
         }
         return success;

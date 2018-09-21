@@ -26,11 +26,11 @@ public class Bfs {
         while(!queue.isEmpty()){
             current = queue.remove();
             System.out.println(current.getIdentidier());
+            if(current.equals(graph.getVertex(stop))){
+                return true;
+            }
             for(Edge edge : current.getEdges().values()){
                 if(!edge.getTo().isSeen()){
-                    if(edge.getTo().equals(graph.getVertex(stop))){
-                        return true;
-                    }
                 edge.getTo().seen();
                 queue.add(edge.getTo());
                 }

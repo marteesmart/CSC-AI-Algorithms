@@ -25,19 +25,18 @@ public class Dfs{
         while(!stack.empty()){
             current = stack.peek();
             System.out.println(current.getIdentidier());
+            if(current.equals(graph.getVertex(stop))){
+                return true;
+            }
             current.seen();
             
             int i = -1;
             for(Edge edge : current.getEdges().values()){
                 i++;
                 if(!edge.getTo().isSeen()){
-                    if(edge.getTo().equals(graph.getVertex(stop))){
-                        return true;
-                    }else{
-                        edge.getTo().seen();
-                        stack.push(edge.getTo());
-                        break;
-                    }
+                    edge.getTo().seen();
+                    stack.push(edge.getTo());
+                    break;
                 }else{
                     //incase it has gone through all the edges and all have beem seen already
                     if(i == (current.getEdges().size() - 1)){

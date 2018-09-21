@@ -29,6 +29,9 @@ public class Dls {
         while(!stack.empty()){
             current = stack.peek();
             System.out.println(current.getIdentidier());
+            if(current.equals(graph.getVertex(stop))){
+                return true;
+            }
             current.seen();
             
             if(current.getDepth() < limit){
@@ -38,12 +41,9 @@ public class Dls {
                     if(!edge.getTo().isSeen()){
                         edge.getTo().seen();
                         edge.getTo().setDepth(current.getDepth() + 1);
-                        if(edge.getTo().equals(graph.getVertex(stop))){
-                            return true;
-                        }else{
-                            stack.push(edge.getTo());
-                            break;
-                        }
+                        stack.push(edge.getTo());
+                        break;
+                        
                     }else{
                         //incase it has gone through all the edges and all have beem seen already
                         if(i == (current.getEdges().size() - 1)){

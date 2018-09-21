@@ -21,6 +21,8 @@ public class Vertex {
     private String identifier;
     private int depth;
     private int path_to_root = 100000000;
+    private int h;
+    private int g;
     Vertex parent;
      
     public Vertex(String id){
@@ -90,6 +92,14 @@ public class Vertex {
     
     public Vertex getParent(){
         return parent;
+    }
+    
+    public int getH(){
+        return h;
+    }
+    
+    public void setH(int h){
+        this.h = h;
     }
     
 }

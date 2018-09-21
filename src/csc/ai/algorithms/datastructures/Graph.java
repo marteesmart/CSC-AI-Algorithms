@@ -28,8 +28,9 @@ public class Graph {
         }
     }
     
-    public void addVertex(String identifier){
+    public Vertex addVertex(String identifier){
         vertices.put(identifier, new Vertex(identifier));
+        return vertices.get(identifier);
     }
     
     public void addVertex(String identifier, int level){

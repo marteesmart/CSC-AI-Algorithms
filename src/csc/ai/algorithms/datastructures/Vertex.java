@@ -23,7 +23,7 @@ public class Vertex {
     private int path_to_root = 100000000;
     private int h;
     private int g;
-    Vertex parent;
+    Vertex parent = null;
      
     public Vertex(String id){
         identifier = id;

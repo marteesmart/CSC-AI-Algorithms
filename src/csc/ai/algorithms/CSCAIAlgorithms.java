@@ -11,6 +11,7 @@ import csc.ai.algorithms.search.informed.AStar;
 import csc.ai.algorithms.search.informed.BestFirstSearch;
 import csc.ai.algorithms.search.informed.Tabu;
 import csc.ai.algorithms.search.uninformed.Bfs;
+import csc.ai.algorithms.search.uninformed.BiDirectional;
 import csc.ai.algorithms.search.uninformed.Dfs;
 import csc.ai.algorithms.search.uninformed.Dls;
 import csc.ai.algorithms.search.uninformed.Ucs;
@@ -27,7 +28,7 @@ public class CSCAIAlgorithms {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        testAStar();
+        testBiDirectional();
     }
     
    
@@ -291,4 +292,32 @@ public class CSCAIAlgorithms {
         System.out.println(a.find(stop, graph, start));
     }
     
+    public static void testBiDirectional(){
+        System.out.println("Bi-directional Search");
+        Graph graph = new Graph();
+        graph.addVertex("A");
+        graph.addVertex("B");
+        graph.addVertex("C");
+        graph.addVertex("D");
+        graph.addVertex("E");
+        graph.addVertex("F");
+        graph.addVertex("G");
+        graph.addVertex("H");
+        graph.addVertex("I");
+        
+        graph.connect("A", "B");
+        graph.connect("A", "C");
+        graph.connect("B", "D");
+        graph.connect("B", "E");
+        graph.connect("B", "F");
+        graph.connect("D", "I");
+        graph.connect("F", "H");
+        graph.connect("C", "G");
+        graph.connect("G", "H");
+        
+        BiDirectional bidi = new BiDirectional();
+        String start = "A";
+        String stop = "H";
+        System.out.println(bidi.find(stop, graph, start));
+    }
 }

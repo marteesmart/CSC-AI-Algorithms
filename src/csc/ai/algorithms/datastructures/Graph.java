@@ -18,6 +18,7 @@ public class Graph {
     public void connect(String from, String to){
         if(vertices.containsKey(from) && vertices.containsKey(to)){
             vertices.get(from).addEdge(vertices.get(to));
+            vertices.get(to).addEdge(vertices.get(from));
         }
     }
     
@@ -26,6 +27,7 @@ public class Graph {
             vertices.get(from).addEdge(vertices.get(to));
             vertices.get(to).addEdge(vertices.get(from));
             vertices.get(from).getEdges().get(to).setWeight(weight);
+            vertices.get(to).getEdges().get(from).setWeight(weight);
         }
     }
     

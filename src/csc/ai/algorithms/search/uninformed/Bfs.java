@@ -25,6 +25,7 @@ public class Bfs {
         queue.add(graph.getVertex(start));
         while(!queue.isEmpty()){
             current = queue.remove();
+            current.seen();
             System.out.println(current.getIdentidier());
             if(current.equals(graph.getVertex(stop))){
                 return true;

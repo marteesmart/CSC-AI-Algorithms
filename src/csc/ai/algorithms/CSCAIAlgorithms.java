@@ -7,6 +7,7 @@ package csc.ai.algorithms;
 
 import csc.ai.algorithms.datastructures.Graph;
 import csc.ai.algorithms.datastructures.Vertex;
+import csc.ai.algorithms.search.informed.AStar;
 import csc.ai.algorithms.search.informed.BestFirstSearch;
 import csc.ai.algorithms.search.informed.Tabu;
 import csc.ai.algorithms.search.uninformed.Bfs;
@@ -26,7 +27,7 @@ public class CSCAIAlgorithms {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        testTabu();
+        testAStar();
     }
     
    
@@ -257,4 +258,37 @@ public class CSCAIAlgorithms {
         tabu.find(graph, start);
         
     }
+    
+    public static void testAStar(){
+        System.out.println("A* Search");
+        Graph graph = new Graph();
+        graph.addVertex("A").setH(15);
+        graph.addVertex("B").setH(9);
+        graph.addVertex("C").setH(7);
+        graph.addVertex("D").setH(10);
+        graph.addVertex("E").setH(7);
+        graph.addVertex("F").setH(6);
+        graph.addVertex("G").setH(2);
+        graph.addVertex("H").setDepth(0);
+        graph.addVertex("I").setH(12);
+        
+        graph.connect("A", "B", 1);
+        graph.connect("A", "C", 7);
+        graph.connect("B", "D", 6);
+        graph.connect("B", "E", 4);
+        graph.connect("B", "F", 2);
+        graph.connect("B", "C", 5);
+        graph.connect("D", "I", 1);
+        graph.connect("C", "G", 13);
+        graph.connect("G", "H", 1);
+        graph.connect("I", "H", 10);
+        graph.connect("E", "H", 8);
+        graph.connect("F", "H", 6);
+        
+        AStar a = new AStar();
+        String start = "A";
+        String stop = "H";
+        System.out.println(a.find(stop, graph, start));
+    }
+    
 }
